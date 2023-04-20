@@ -1,0 +1,103 @@
+# include:
+#  - template: Jobs/SAST.gitlab-ci.yml
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+
+default:
+  image: docker:latest
+  services:
+    - docker:dind
+  tags:
+    - docker
+    - dev
+    - v1
+
+variables:
+  DOCKER_DRIVER: overlay
+  # SPRING_PROFILES_ACTIVE:
+
+stages:
+  - build
+  #  - test
+  #  - package
+  #  - test
+  - deploy
+
+build-maven:
+  tags:
+    - docker
+  image: maven:3.9.0-eclipse-temurin-17
+  stage: build
+  script:
+    - "mvn spring-boot:build-image"
+  artifacts:
+    name: $CI_COMMIT_REF_SLUG
+    paths:
+      - target/*.jar
+
+  # java:
+  #  tags:
+  #    - docker
+  #  image: maven:3.9.0-eclipse-temurin-17
+  #  stage: test
+  #  script:
+  #    - mvn verify
+  # artifacts:
+  #   when: always
+  #   reports:
+  #       #     junit:
+  #        - target/surefire-reports/TEST-*.xml
+  #        - target/failsafe-reports/TEST-*.xml
+
+deploy-ec2:
+  tags:
+    - dev
+  image: ubuntu:latest
+  stage: deploy
+  before_script:
+    - 'which ssh-agent || ( apt update -y && apt install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts
+    - ssh-keyscan $EC2_HOST_DEV >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - apt install apt-utils -y
+    - apt install curl -y
+
+  script:
+    - hostname
+    - curl -s checkip.dyndns.org
+    - echo "Listing docker containers and images.."
+    - ssh ec2-user@"$EC2_HOST_DEV" 'docker container ls; docker images'
+    - echo "Stopping and removing containers..."
+    - ssh ec2-user@"$EC2_HOST_DEV" 'docker ps -aq | xargs docker stop | xargs docker rm'
+    - sleep 25s
+    - ssh ec2-user@"$EC2_HOST_DEV" 'docker image prune -f'
+    - sleep 21s
+    - echo "Pulling latest deployment image..."
+    - ssh ec2-user@"$EC2_HOST_DEV" 'docker pull jvbrsi/japrogram:java.api.dev'
+    - sleep 10s
+    - echo "Launching service..."
+    - ssh ec2-user@"$EC2_HOST_DEV" 'docker run -d -p 80:8080 jvbrsi/japrogram:java.api.dev'
+    - sleep 30s
+    - echo "Complete"
+
+
+check-health:
+  tags:
+    - dev
+  image: ubuntu:latest
+  stage: .post
+  variables:
+    CHECK_ACTUATOR_ENDPOINT: 'curl -Is $CHECK_ACTUATOR_ENDPOINT'
+  script:
+    - apt update -y
+    - apt install apt-utils -y
+    - apt install curl -y
+    - curl -s checkip.dyndns.org
+    - echo "Site check one..."
+    - echo $CHECK_ACTUATOR_ENDPOINT
+

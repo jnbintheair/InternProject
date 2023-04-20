@@ -1,0 +1,1766 @@
+{
+	"info": {
+		"_postman_id": "17121672-9466-4377-81e8-950e42c2e0ba",
+		"name": "JA Availability Service v17.1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25920120"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "/getUserByEmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getUserByEmail",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getUserByEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getUserByName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Vanessa\",\r\n    \"lastName\": \"Cooper\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getUserByName",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getUserByName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getPracticeArea",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vanessa.cooper@teamsparq.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getPracticeArea",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getPracticeArea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getUserDevCenter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getUserDevCenter",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getUserDevCenter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getAllUsers",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/createUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{       \r\n        \"DevCenter\": \"Augusta\",\r\n        \"email\": \"test.data@ruralsourcing.com\",\r\n        \"firstName\": \"test\",\r\n        \"graduated\": false,\r\n        \"isActive\": false,\r\n        \"isAdmin\": false,\r\n        \"isManager\": false,\r\n        \"lastName\": \"data\",\r\n        \"phoneNumber\": \"2254286164\",\r\n        \"TimeZone\": \"Central\",\r\n        \"practiceArea\" : \"dot net\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/createUser",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/setNewUserCredentials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vanessa.cooper@teamsparq.com\",\r\n    \"Pword\": \"passwordPassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/setUserCredentials",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"setUserCredentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateUserPassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"John.Doe@teamsparq.com\",\r\n    \"Pword\": \"pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateUserPassword",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateUserPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateActive",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"isActive\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateActive",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateFirstName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"John.Doe@teamsparq.com\",\r\n    \"firstName\": \"Joey\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateFirstName",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateFirstName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateLastName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"John.Doe@teamsparq.com\",\r\n    \"lastName\": \"Doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateLastName",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateLastName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateMiddleName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"middleName\": \"jojoSiwa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateMiddleName",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateMiddleName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateEmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Joey\",\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateEmail",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updatePhoneNumber",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"phoneNumber\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updatePhoneNumber",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updatePhoneNumber"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateGraduated",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"John.Doe@teamsparq.com\",\r\n    \"isGraduated\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateGraduated",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateGraduated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateGraduationDate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"graduationDate\": \"2002-06-06\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateGraduated",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateGraduated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateIsAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"John.Doe@teamsparq.com\",\r\n    \"isAdmin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateIsAdmin",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateIsAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateIsManager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"isManager\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateIsManager",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateIsManager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateDevCenter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"DevCenter\": \"Baton Rouge\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateDevCenter",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateDevCenter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updatePracticeArea",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"practiceArea\": \"Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updatePracticeArea",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updatePracticeArea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateTimeZone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"TimeZone\": \"Central\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateTimeZone",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateTimeZone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateRegion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"Region\": \"west\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/updateRegion",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"updateRegion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getPracticeAreaAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"practiceArea\":\"java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getPracticeAreaAll",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getPracticeAreaAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getTimeZoneAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TimeZone\":\"Central\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getTimeZoneAll",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getTimeZoneAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getDevCenterAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"DevCenter\":\"Augusta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getDevCenterAll",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getDevCenterAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getRegionAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Region\":\"west\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/users/getRegionAll",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"users",
+								"getRegionAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authenticate",
+			"item": [
+				{
+					"name": "/validate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"\r",
+									"\r",
+									"   var jsonData = pm.response.json();\r",
+									"\r",
+									"   pm.globals.set(\"jwt\", jsonData.token);\r",
+									"\r",
+									"});\r",
+									"var fail = pm.response.code;\r",
+									"if(fail == 403){\r",
+									"    pm.globals.set(\"jwt\", null);\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"John.Doe@teamsparq.com\",\r\n    \"Pword\": \"pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/authenticate/validate",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"authenticate",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "availability",
+			"item": [
+				{
+					"name": "/reserveTimeBlock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startTime\": \"08:00:00\",\r\n    \"endTime\": \"12:00:00\",\r\n    \"email\":\"joseph.bourgeois@teamsparq.com\",\r\n    \"Day\":\"monday\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/reserveTimeBlock",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"reserveTimeBlock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getAllForHour",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startTime\": \"08:00:00\",\r\n    \"Day\":\"monday\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/getAllForHour",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"getAllForHour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getHoursForDay",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Day\":\"monday\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/getHoursForDay",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"getHoursForDay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getUserHours",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Joseph.bourgeois@teamsparq.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/getUserHours",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"getUserHours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateUserDayHours",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Day\":\"monday\",\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"startTime\":\"13:00:00\",\r\n    \"endTime\":\"15:00:00\",\r\n    \"newstartTime\":\"13:00:00\",\r\n    \"newendTime\":\"17:00:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/updateUserDayHours",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"updateUserDayHours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/removeTimeSlot",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Day\":\"monday\",\r\n    \"email\": \"joseph.bourgeois@teamsparq.com\",\r\n    \"startTime\":\"06:00:00\",\r\n    \"endTime\":\"06:30:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/removeTimeSlot",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"removeTimeSlot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/setSchedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"joseph.bourgeois@teamsparq.com\",\r\n\"data\":\r\n{\r\n  \"monday\": [\r\n    {\r\n      \"id\": 597747,\r\n      \"start\": 6,\r\n      \"stop\": 6.5,\r\n      \"timeBEStart\": \"6:00:00\",\r\n      \"timeBEStop\": \"6:30:00\"\r\n    },\r\n    {\r\n      \"id\": 597665,\r\n      \"start\": 6,\r\n      \"stop\": 6.5,\r\n      \"timeBEStart\": \"7:00:00\",\r\n      \"timeBEStop\": \"8:30:00\"\r\n    }\r\n  ],\r\n  \"tuesday\": [\r\n    {\r\n      \"id\": 418951,\r\n      \"start\": 6,\r\n      \"stop\": 6.5,\r\n      \"timeBEStart\": \"6:00:00\",\r\n      \"timeBEStop\": \"6:30:00\"\r\n    }\r\n  ],\r\n  \"wednesday\": [\r\n    {\r\n      \"id\": 869940,\r\n      \"start\": 6,\r\n      \"stop\": 6.5,\r\n      \"timeBEStart\": \"6:00:00\",\r\n      \"timeBEStop\": \"6:30:00\"\r\n    }\r\n  ],\r\n  \"thursday\": [\r\n    {\r\n      \"id\": 868155,\r\n      \"start\": 6,\r\n      \"stop\": 6.5,\r\n      \"timeBEStart\": \"6:00:00\",\r\n      \"timeBEStop\": \"6:30:00\"\r\n    }\r\n  ],\r\n  \"friday\": [\r\n    {\r\n      \"id\": 116676,\r\n      \"start\": 6,\r\n      \"stop\": 6.5,\r\n      \"timeBEStart\": \"6:00:00\",\r\n      \"timeBEStop\": \"6:30:00\"\r\n    }\r\n  ]\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/setSchedule",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"setSchedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/removeSchedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"joseph.bourgeois@teamsparq.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/removeSchedule",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"removeSchedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getAllUsersSize",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/getAllUsersSize",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"getAllUsersSize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getThreshHold",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"hour\":\"00:00:00\",\r\n\"day\":\"monday\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/getThreshHold",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"getThreshHold"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getTeamAvailability",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/getTeamAvailability",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"getTeamAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/offSetTimeAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TimeZone\": \"Eastern\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/hours/offSetTimeAll",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"hours",
+								"offSetTimeAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "actuator",
+			"item": [
+				{
+					"name": "/health",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/actuator/health",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/metrics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/actuator/metrics",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"actuator",
+								"metrics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/mappings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/actuator/mappings",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"actuator",
+								"mappings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auditevents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{env}}/actuator/auditevents",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"actuator",
+								"auditevents"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/v3/api-docs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{env}}/v3/api-docs",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"v3",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
