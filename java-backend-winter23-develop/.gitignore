@@ -6,7 +6,6 @@
 .project
 .classpath
 .settings/
-.properties
 
 ### STS ###
 .apt_generated
@@ -27,3 +26,6 @@
 /nbdist/
 /.nb-gradle/
 /target/
+### Resources ###
+resources/
+application.properties
